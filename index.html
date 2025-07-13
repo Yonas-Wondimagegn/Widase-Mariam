@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="am" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wedase Mariam</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&family=Abyssinica+SIL:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body class="light font-noto">
+  <header class="navbar">
+    <h1>ውዳሴ ማርያም</h1>
+
+    <div class="controls">
+      <select id="fontSelect" aria-label="Choose font">
+        <option value="noto">Noto Sans</option>
+        <option value="abyssinica">Abyssinica SIL</option>
+      </select>
+      <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+      <button id="langToggle" aria-label="Toggle language">አማርኛ</button>
+      <button id="fontIncrease">A+</button>
+      <button id="fontDecrease">A-</button>
+
+
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- █ SIDEBAR -->
+    <aside class="sidebar">
+    <nav>
+        <h2>ዕለታዊ ጸሎቶች</h2>
+        <ul id="dayList" class="nav-list"></ul>
+
+        <h2>ልዩ ፍሎች</h2>
+        <ul id="sectionList" class="nav-list"></ul>
+
+        <!-- 🔍 SEARCH RESULTS NAV -->
+        <h2 id="matchHeader" style="display:none;">ውጤቶች</h2>
+        <ul id="matchList" class="nav-list"></ul>
+    </nav>
+    </aside>
+
+
+    <!-- █ MAIN -->
+    <main class="main-content">
+      <!-- search -->
+      <div class="search-bar">
+        <input id="searchInput" type="text" placeholder="ፍለጋ..." />
+
+        <!-- NEW buttons -->
+        <button id="searchBtn"    aria-label="Search">🔍</button>
+        <button id="prevMatchBtn" aria-label="Previous match" disabled>⬆️</button>
+        <button id="nextMatchBtn" aria-label="Next match"     disabled>⬇️</button>
+
+        <div id="searchResults" class="search-results"></div>
+      </div>
+
+      <!-- text -->
+      <article id="pageContent" class="page-content">በገጹ ይህ ይታያል</article>
+
+      <!-- nav -->
+      <div class="page-controls">
+        <button id="prevBtn">« ቀዳሚ</button>
+        <input type="number" id="pageInput" min="1" value="1" aria-label="Page" />
+        <span id="pageMax">/ 1</span>
+        <button id="nextBtn">ቀጣይ »</button>
+      </div>
+
+      <!-- audio -->
+      <div class="audio-player">
+        <button id="audioBtn" aria-label="Play / Pause">▶️</button>
+        <audio id="audio" preload="auto"></audio>
+      </div>
+
+      <!-- bookmark -->
+      <button id="bookmarkBtn" class="bookmark-btn" aria-label="Save bookmark">🔖 ያስቀምጡ</button>
+    </main>
+  </div>
+
+  <footer>
+    © <span id="year"></span> Wedase Mariam — Ethiopian Orthodox Tewahedo Church
+  </footer>
+
+  <script src="scripts/app.js" defer></script>
+</body>
+</html>
